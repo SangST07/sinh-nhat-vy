@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2c142b">
+<title>Chúc mừng sinh nhật Hạ Vy</title>
+<link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+<canvas id="ambient" aria-hidden="true"></canvas>
+<section class="intro" id="intro" aria-label="Ngày và đồng hồ đếm ngược">
+  <div style="text-align:center">
+    <p class="date-line">6 tháng 11 năm 2026</p>
+    <div class="timer" id="timer">23:59:50</div>
+  </div>
+</section>
+<section class="final-screen" id="finalScreen" aria-live="assertive">
+  <div><p>Chuẩn bị mở thiệp sinh nhật Hạ Vy! 🎉</p><span id="lastNumber">3</span></div>
+</section>
+<aside class="guestbook">
+  <button class="guestbook-toggle" id="guestbookToggle" type="button" aria-expanded="false">Gửi lời chúc 💌</button>
+  <form class="guestbook-panel" id="guestbookForm">
+    <h3>Gửi lời chúc đến Hạ Vy</h3>
+    <input id="guestName" name="name" maxlength="28" placeholder="Tên của bạn" required>
+    <textarea id="guestWish" name="wish" maxlength="180" placeholder="Viết lời chúc sinh nhật..." required></textarea>
+    <button class="guestbook-send" type="submit">Gửi lời chúc ✨</button>
+    <p class="guestbook-note">Lời chúc được chia sẻ cho mọi khách truy cập khi đã kết nối Supabase.</p>
+  </form>
+</aside>
+
+<main class="scene">
+  <section class="card">
+    <h2>Chúc mừng sinh nhật<br>Hạ Vy!</h2>
+    <p class="event-date">Ngày 7 tháng 11 năm 2026</p>
+    <div class="cake-stage" id="cakeStage" aria-label="Kéo hoặc vuốt để xoay bánh kem">
+      <div class="cake-aura"></div>
+      <span class="star s1">✦</span><span class="star s2">✧</span><span class="star s3">✧</span><span class="star s4">✦</span>
+      <canvas id="cakeCanvas" aria-label="Bánh sinh nhật 3D làm từ các hạt sáng"></canvas>
+    </div>
+    <p class="hint">Kéo hoặc vuốt bánh để xoay 🎂</p>
+    <button class="gift" id="openGift" type="button" aria-label="Mở hộp quà lời chúc">
+      <span class="gift-bow"></span><span class="gift-lid"></span><span class="gift-body"></span>
+    </button>
+  </section>
+</main>
+<section class="modal" id="wishModal" role="dialog" aria-modal="true" aria-labelledby="wishTitle">
+  <div class="frame">
+    <button class="close" id="closeModal" type="button" aria-label="Đóng">×</button>
+    <button class="center-gift" id="centerGift" type="button" aria-label="Bấm để mở hộp quà ở giữa màn hình">
+      <span class="center-gift-bow"></span><span class="center-gift-lid"></span><span class="center-gift-body"></span>
+    </button>
+    <div class="wish-content" id="wishContent">
+      <h2 id="wishTitle">Gửi Hạ Vy yêu quý</h2>
+      <p class="wish-text" id="wishText" aria-live="polite">💝</p>
+      <button class="another-wish" id="anotherWish" type="button">Lời chúc khác ✨</button>
+    </div>
+    <button class="return-button" id="returnToCard" type="button">Quay lại thiệp sinh nhật</button>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="src/js/app.js"></script>
+</body>
+</html>
